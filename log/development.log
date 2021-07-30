@@ -48,3 +48,626 @@ Processing by V1::UsersController#index as HTML
 Completed 200 OK in 9ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 3284)
 
 
+Started GET "/" for 127.0.0.1 at 2021-07-29 11:37:48 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+Zeitwerk::NameError (expected file /Users/alexfalconer/Development/code/kanye-critique/backend-kanye-critique/app/controllers/static_controller.rb to define constant StaticController, but didn't):
+  
+zeitwerk (2.4.2) lib/zeitwerk/loader/callbacks.rb:18:in `on_file_autoloaded'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:27:in `block in require'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:26:in `tap'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:26:in `require'
+activesupport (6.1.4) lib/active_support/inflector/methods.rb:274:in `const_get'
+activesupport (6.1.4) lib/active_support/inflector/methods.rb:274:in `constantize'
+activesupport (6.1.4) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.1.4) lib/action_dispatch/http/request.rb:93:in `controller_class_for'
+actionpack (6.1.4) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (6.1.4) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (6.1.4) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (6.1.4) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-07-29 11:38:13 -0400
+Processing by StaticController#home as HTML
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 11:38:19 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 1.3ms | ActiveRecord: 3.6ms | Allocations: 2906)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "jdjdj"], ["password", "hdhjd"], ["created_at", "2021-07-29 15:45:41.256456"], ["updated_at", "2021-07-29 15:45:41.256456"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 11:45:45 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 4.4ms | ActiveRecord: 4.8ms | Allocations: 5680)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Destroy (1.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 11:47:02 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 603)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "blah"], ["email", "hd"], ["password", "blah"], ["created_at", "2021-07-29 15:47:30.273789"], ["updated_at", "2021-07-29 15:47:30.273789"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 11:47:32 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 715)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 11:47:50 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 619)
+
+
+Started GET "/" for 127.0.0.1 at 2021-07-29 14:08:10 -0400
+  
+SyntaxError (/Users/alexfalconer/Development/code/kanye-critique/backend-kanye-critique/config/routes.rb:4: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+  delete :logout, to "sessions#logout"
+                     ^
+/Users/alexfalconer/Development/code/kanye-critique/backend-kanye-critique/config/routes.rb:5: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+  get :logged_in, to "sessions#logged_in"
+                     ^):
+  
+config/routes.rb:4: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+config/routes.rb:5: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+config/routes.rb:4: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+config/routes.rb:5: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+Started GET "/" for 127.0.0.1 at 2021-07-29 14:08:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/" for 127.0.0.1 at 2021-07-29 14:11:09 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2300)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-07-29 14:26:43 -0400
+  
+ActionController::RoutingError (uninitialized constant FallbackController):
+  
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 14:26:58 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 5.1ms | Allocations: 5065)
+
+
+Started GET "/registrations" for 127.0.0.1 at 2021-07-29 14:31:15 -0400
+  
+ActionController::RoutingError (uninitialized constant FallbackController):
+  
+Started GET "/v1/registrations" for 127.0.0.1 at 2021-07-29 14:31:19 -0400
+  
+ActionController::RoutingError (uninitialized constant FallbackController):
+  
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 14:31:26 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 605)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 14:36:03 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 619)
+
+
+Started GET "/v1/registrations" for 127.0.0.1 at 2021-07-29 14:39:41 -0400
+  
+ActionController::RoutingError (uninitialized constant FallbackController):
+  
+Started GET "/v1/registrations" for 127.0.0.1 at 2021-07-29 14:40:02 -0400
+  
+ActionController::RoutingError (uninitialized constant FallbackController):
+  
+Started GET "/v1/registrations" for 127.0.0.1 at 2021-07-29 14:41:04 -0400
+  
+ActionController::RoutingError (uninitialized constant FallbackController):
+  
+Started GET "/v1/registrations" for 127.0.0.1 at 2021-07-29 14:41:05 -0400
+  
+ActionController::RoutingError (uninitialized constant FallbackController):
+  
+Started GET "/v1/registrations" for 127.0.0.1 at 2021-07-29 14:43:03 -0400
+  
+ActionController::RoutingError (uninitialized constant FallbackController):
+  
+Started GET "/v1/registrations" for 127.0.0.1 at 2021-07-29 14:45:07 -0400
+  
+ActionController::RoutingError (uninitialized constant FallbackController):
+  
+Started GET "/v1/registrations" for 127.0.0.1 at 2021-07-29 14:45:09 -0400
+  
+ActionController::RoutingError (uninitialized constant FallbackController):
+  
+Started GET "/v1/registrations" for 127.0.0.1 at 2021-07-29 14:47:55 -0400
+  
+ActionController::RoutingError (uninitialized constant FallbackController):
+  
+Started GET "/v1/registrations" for 127.0.0.1 at 2021-07-29 14:53:55 -0400
+  
+ActionController::RoutingError (uninitialized constant FallbackController):
+  
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 14:53:59 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 51ms (Views: 48.2ms | ActiveRecord: 42.7ms | Allocations: 4105)
+
+
+Started GET "/v1/reviews" for 127.0.0.1 at 2021-07-29 14:54:04 -0400
+Processing by V1::ReviewsController#index as HTML
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/v1/reviews_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 1583)
+
+
+Started GET "/v1/albums" for 127.0.0.1 at 2021-07-29 14:54:08 -0400
+Processing by V1::AlbumsController#index as HTML
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/controllers/v1/albums_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 0.6ms | Allocations: 1624)
+
+
+Started GET "/v1/sessions" for 127.0.0.1 at 2021-07-29 14:54:13 -0400
+  
+ActionController::RoutingError (uninitialized constant FallbackController):
+  
+Started GET "/v1/sessions" for 127.0.0.1 at 2021-07-29 14:57:36 -0400
+  
+ActionController::RoutingError (uninitialized constant FallbackController):
+  
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 15:07:40 -0400
+  
+ArgumentError (Before process_action callback :verify_authenticity_token has not been defined):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/v1/users_controller.rb:1:in `<main>'
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 15:08:00 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 12.8ms | ActiveRecord: 6.7ms | Allocations: 4105)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 15:09:20 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 603)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 15:10:45 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 618)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 15:12:53 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 603)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 15:20:23 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 6.5ms | Allocations: 2617)
+
+
+Started GET "/" for 127.0.0.1 at 2021-07-29 15:44:02 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 2300)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 15:44:10 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 2820)
+
+
+Started GET "/" for 127.0.0.1 at 2021-07-29 15:45:41 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2300)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 15:45:51 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 2820)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 15:46:15 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 603)
+
+
+Started GET "/" for 127.0.0.1 at 2021-07-29 15:54:56 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2300)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-29 15:55:00 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 55ms (Views: 49.7ms | ActiveRecord: 0.7ms | Allocations: 2820)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-30 10:27:05 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 16.2ms | ActiveRecord: 7.1ms | Allocations: 4128)
+
+
+Started GET "/" for 127.0.0.1 at 2021-07-30 11:28:38 -0400
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2300)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2021-07-30 11:28:44 -0400
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 2820)
+
+
+Started GET "/" for 127.0.0.1 at 2021-07-30 11:47:57 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 2825)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-07-30 11:48:01 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 23ms (Views: 12.3ms | ActiveRecord: 0.8ms | Allocations: 4856)
+
+
+Started OPTIONS "/users" for ::1 at 2021-07-30 11:48:10 -0400
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/users"):
+  
+Started GET "/" for 127.0.0.1 at 2021-07-30 12:01:59 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 2733)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-07-30 12:02:03 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 17ms (Views: 6.7ms | ActiveRecord: 0.7ms | Allocations: 3907)
+
+
+Started OPTIONS "/users" for ::1 at 2021-07-30 12:02:18 -0400
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/users"):
+  
+Started GET "/" for 127.0.0.1 at 2021-07-30 12:07:31 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 2733)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-07-30 12:07:38 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 16ms (Views: 7.7ms | ActiveRecord: 0.4ms | Allocations: 3908)
+
+
+Started GET "/" for 127.0.0.1 at 2021-07-30 12:10:11 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 2734)
+
+
+Started POST "/users" for ::1 at 2021-07-30 12:11:56 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"al.x.falconer@gmail.com", "password"=>"[FILTERED]", "name"=>"c", "user"=>{"name"=>"c", "email"=>"al.x.falconer@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 4.3ms | Allocations: 5134)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fb52db18408>
+Did you mean?  password=):
+  
+app/controllers/users_controller.rb:14:in `create'
+Started GET "/users" for 127.0.0.1 at 2021-07-30 12:12:14 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.19ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.3ms | Allocations: 1700)
+
+
+Started GET "/" for 127.0.0.1 at 2021-07-30 12:14:16 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 2734)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-07-30 12:14:24 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 200 OK in 10ms (Views: 4.6ms | ActiveRecord: 0.6ms | Allocations: 3907)
+
+
+Started POST "/users" for ::1 at 2021-07-30 12:14:34 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"al.x.falconer@gmail.com", "password"=>"[FILTERED]", "name"=>"b", "user"=>{"name"=>"b", "email"=>"al.x.falconer@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 56.5ms | Allocations: 5099)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fb06a5cb0d0>
+Did you mean?  password=):
+  
+app/controllers/users_controller.rb:14:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3939940038127377060)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3939940038127377060)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-07-30 12:25:58 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 2734)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-07-30 12:26:02 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.25ms)
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 0.6ms | Allocations: 3907)
+
+
+Started POST "/users" for ::1 at 2021-07-30 12:26:11 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"al.x.falconer@gmail.com", "password"=>"[FILTERED]", "name"=>"d", "user"=>{"name"=>"d", "email"=>"al.x.falconer@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 204ms (ActiveRecord: 7.8ms | Allocations: 5099)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fe875345ef8>
+Did you mean?  password=):
+  
+app/controllers/users_controller.rb:14:in `create'
+Started GET "/" for 127.0.0.1 at 2021-07-30 12:28:12 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 2733)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-07-30 12:28:18 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 16ms (Views: 6.4ms | ActiveRecord: 0.7ms | Allocations: 3826)
+
+
+Started POST "/users" for ::1 at 2021-07-30 12:28:32 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"al.x.falconer@gmail.com", "password"=>"[FILTERED]", "name"=>"a", "user"=>{"name"=>"a", "email"=>"al.x.falconer@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "a"], ["email", "al.x.falconer@gmail.com"], ["password", "a"], ["created_at", "2021-07-30 16:28:32.909603"], ["updated_at", "2021-07-30 16:28:32.909603"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.84ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 8.7ms | Allocations: 8220)
+
+
+  
+NoMethodError (undefined method `username' for #<User:0x00007fde41c1d550>):
+  
+app/controllers/users_controller.rb:16:in `create'
+Started GET "/" for 127.0.0.1 at 2021-07-30 12:30:44 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 9ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 2733)
+
+
+Started POST "/users" for ::1 at 2021-07-30 12:30:53 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"al.x.falconer@gmail.com", "password"=>"[FILTERED]", "name"=>"a", "user"=>{"name"=>"a", "email"=>"al.x.falconer@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "a"], ["email", "al.x.falconer@gmail.com"], ["password", "a"], ["created_at", "2021-07-30 16:30:53.455791"], ["updated_at", "2021-07-30 16:30:53.455791"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.83ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 5.5ms | Allocations: 8711)
+
+
+  
+NoMethodError (undefined method `username' for #<User:0x00007ff0a753e040>):
+  
+app/controllers/users_controller.rb:16:in `create'
+Started GET "/" for 127.0.0.1 at 2021-07-30 12:35:29 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 2734)
+
+
+Started POST "/users" for ::1 at 2021-07-30 12:35:40 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"al.x.falconer@gmail.com", "password"=>"[FILTERED]", "name"=>"b", "user"=>{"name"=>"b", "email"=>"al.x.falconer@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "b"], ["email", "al.x.falconer@gmail.com"], ["password", "a"], ["created_at", "2021-07-30 16:35:40.150972"], ["updated_at", "2021-07-30 16:35:40.150972"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 201 Created in 17ms (Views: 4.3ms | ActiveRecord: 6.0ms | Allocations: 6463)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-07-30 12:35:45 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.5ms | Allocations: 1139)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users" for 127.0.0.1 at 2021-07-30 12:37:14 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.7ms | Allocations: 731)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3939940038127377060)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3939940038127377060)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-07-30 12:38:00 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 2733)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-07-30 12:38:05 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 10ms (Views: 5.0ms | ActiveRecord: 0.6ms | Allocations: 3778)
+
+
+Started POST "/users" for ::1 at 2021-07-30 12:38:15 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"al.x.falconer@gmail.com", "password"=>"[FILTERED]", "name"=>"a", "user"=>{"name"=>"a", "email"=>"al.x.falconer@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "a"], ["email", "al.x.falconer@gmail.com"], ["password", "a"], ["created_at", "2021-07-30 16:38:15.552681"], ["updated_at", "2021-07-30 16:38:15.552681"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 201 Created in 16ms (Views: 3.2ms | ActiveRecord: 9.3ms | Allocations: 5662)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-07-30 12:38:19 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 893)
+
+

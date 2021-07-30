@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
-  namespace :v1 do
+  # delete :logout, to "sessions#logout"
+  # get :logged_in, to "sessions#logged_in"
+  root to: "static#home"
     resources :reviews
     resources :albums
     resources :users
-  end
+    resources :sessions, only: [:create]
+    resources :registrations, only: [:create]
+
+    post "/signup", to: "users#create"
+    post "/login", to: "sessions#login"
 
   
   # Routing logic: fallback requests for React Router.

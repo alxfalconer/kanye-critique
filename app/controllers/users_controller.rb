@@ -1,4 +1,5 @@
-class V1::UsersController < ApplicationController
+class UsersController < ApplicationController
+    
     def index
         @users = User.all
         render json: @users, status: :ok
@@ -9,6 +10,7 @@ class V1::UsersController < ApplicationController
     end
 
     def create
+
         @user = User.new(user_params)
         @user.save
         render json: @user, status: :created
